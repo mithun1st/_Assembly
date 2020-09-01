@@ -1,0 +1,44 @@
+INCLUDE 'EMU8086.INC'
+.MODEL SMALL
+.STACK 100H
+.DATA
+.CODE
+
+MAIN PROC
+    
+    ;AND
+    MOV BH , 1111B
+    AND BH , 0100B
+    
+    MOV AH,2
+    MOV DL,BH
+    INT 21H
+    
+    ;OR
+    MOV BH , 00001100B
+    AND BH , 00001010B
+    
+    MOV AH,2
+    MOV DL,14
+    INT 21H
+    
+    ;XOR
+    MOV BH , 0000101B
+    XOR BH , 0000011B
+    
+    MOV AH,2
+    MOV DL,BH
+    INT 21H
+    
+    ;NOT
+    MOV BH , 11110011B
+    NOT BH
+    
+    MOV AH,2
+    MOV DL,BH
+    INT 21H
+    
+    MOV AH,4CH
+    INT 21H
+    MAIN ENDP
+END MAIN

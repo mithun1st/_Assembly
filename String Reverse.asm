@@ -1,0 +1,24 @@
+INCLUDE 'EMU8086.INC'
+.MODEL SMALL
+.STACK 100H
+.DATA
+.CODE
+
+MAIN PROC
+    
+    MOV CX, 0
+    INC CX
+    MOV AH,2
+    MOV DL,CX
+    INT 21H
+    INC CX
+    ;INC CX
+    PRINTN
+    ;MOV AH,2
+    MOV DL,CX
+    INT 21H
+    
+    MOV AH,4CH
+    INT 21H
+    MAIN ENDP
+END MAIN
