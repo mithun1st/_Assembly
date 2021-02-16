@@ -17,7 +17,7 @@ MAIN PROC
     INT 21H
     
     
-    ;division
+    ;division 
     
     MOV AL,2
     MOV BL,4
